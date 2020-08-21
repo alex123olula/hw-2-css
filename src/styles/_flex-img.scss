@@ -1,0 +1,21 @@
+@import "mixins";
+@import "colors";
+
+
+section {
+    @include animated-text;
+
+    .title {
+        margin-bottom: 20px;
+    }
+
+    .flex-box {
+        @include display-flex;
+        max-width: 1300px;
+        margin: auto;
+
+        img {
+            padding: 20px 0;
+        }
+    }
+}

@@ -1,0 +1,10 @@
+@import "colors";
+
+.footer-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: $nav-footer-bg-color;
+    color: $text-color;
+    height: 100px;
+}

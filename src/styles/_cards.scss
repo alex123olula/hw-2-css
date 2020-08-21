@@ -1,0 +1,37 @@
+@import "mixins";
+
+.cards {
+
+    display: grid;
+    grid-template-columns: 202px 202px 202px;
+    grid-template-rows: 385px 385px;
+    grid-gap: calc(100vw / 24);
+    height: auto;
+    margin-bottom: 10px;
+    justify-content: center;
+
+
+    .card {
+        display: flex;
+        flex-direction: column;
+        width: 200px;
+        background: $card-bg-color;
+        border: solid $card-border-color 1px;
+        text-align: center;
+
+        p {
+            padding: 0 10px;
+        }
+    }
+
+    @media (max-width: 767.98px) {
+        grid-template-columns: 202px 202px;
+        grid-template-rows: 385px 385px 385px;
+    }
+
+    @media (max-width: 431px) {
+        grid-template-columns: 202px;
+        grid-template-rows: 385px 385px 385px 385px 385px 385px;
+    }
+
+}

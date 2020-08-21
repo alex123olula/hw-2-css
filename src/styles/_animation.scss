@@ -1,0 +1,126 @@
+@import "mixins";
+@import "colors";
+
+.animated {
+    height: 90vh;
+    @include animated-text;
+
+    .star {
+        width: 2px;
+        height: 2px;
+        background: $star-bg-color;
+        position: absolute;
+        border-radius: 50%;
+    }
+
+    .star:nth-child(1) {
+        top: 20%;
+        left: 50%
+    }
+
+    .star:nth-child(2) {
+        top: 30%;
+        left: 30%
+    }
+
+    .star:nth-child(3) {
+        top: 90%;
+        left: 90%
+    }
+
+    .star:nth-child(4) {
+        top: 80%;
+        left: 20%
+    }
+
+    .star:nth-child(5) {
+        top: 30%;
+        left: 80%
+    }
+
+    .star:nth-child(6) {
+        top: 70%;
+        left: 80%
+    }
+
+    .star:nth-child(7) {
+        top: 20%;
+        left: 20%
+    }
+
+    .star:nth-child(8) {
+        top: 80%;
+        left: 50%
+    }
+
+    .star:nth-child(9) {
+        top: 35%;
+        left: 10%
+    }
+
+    .star:nth-child(10) {
+        top: 60%;
+        left: 20%
+    }
+
+    .star:nth-child(even) {
+        animation: star-even 2s infinite;
+    }
+
+    @keyframes star-even {
+        0%, 90% {
+            box-shadow: 0 0 3px 3px $nav-bg;
+        }
+        100% {
+            box-shadow: 0 0 16px 16px $nav-bg;
+        }
+    }
+
+    .star:nth-child(odd) {
+        animation: star-odd 2s infinite;
+    }
+
+    @keyframes star-odd {
+        0%, 35%, 50% {
+            box-shadow: 0 0 3px 3px $nav-bg;
+        }
+        45% {
+            box-shadow: 0 0 16px 16px $nav-bg;
+        }
+    }
+
+    .clouds {
+        width: 220px;
+        height: 220px;
+        @include animation-absolute;
+
+        img {
+            position: relative;
+            z-index: 20;
+        }
+    }
+
+    .map {
+        width: 200px;
+        height: 200px;
+        background: $map-bg-color;
+        @include animation-absolute;
+        border-radius: 50%;
+        box-shadow: -40px -30px 0 0 rgba(0, 0, 0, .15) inset,
+        -70px -30px 0 0 rgba(0, 0, 0, .1) inset,
+        5px 5px 0 0 rgba(255, 255, 255, .2) inset;
+        background: url("~assets/img/map.png");
+        background-size: cover;
+        animation: world 5s infinite linear;
+        @keyframes world {
+            from {
+                background-position: left center;
+            }
+            to {
+                background-position: -396px center;
+            }
+        }
+
+    }
+
+}
